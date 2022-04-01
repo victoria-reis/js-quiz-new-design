@@ -23,7 +23,6 @@ MVP:
   - Keeps score
     - Create a counter that tracks correct answers (if correct answer === true then score++, else currentScore === currentScore)
 
-
 Stretch goals:
 
 - Shareable results
@@ -40,3 +39,84 @@ Stretch goals:
     - HMTL
     - PHP
 */
+
+const techTestApp = {};
+techTestApp.apiKey = "w2z3GyoMPfVmhho3HjLyM30zUUD5c9ZCeg9cR4qC";
+techTestApp.answersObj;
+techTestApp.answerArray;
+techTestApp.question;
+techTestApp.button = document.querySelector("button");
+
+techTestApp.init = function() {
+};
+
+techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
+techTestApp.url.search = new URLSearchParams({
+    apiKey: techTestApp.apiKey,
+    category: "Code",
+    tags: "javascript",
+    difficulty: "easy"
+})
+
+fetch(techTestApp.url).then(function(response) {
+  console.log(response);
+  return response.json();
+})
+.then(function(jsonResponse) {
+  // console.log(jsonResponse);
+  // console.log(jsonResponse[0].question);
+  // console.log(jsonResponse[0].answers)
+  
+  // jsonResponse.forEach(function(object) {
+  // // console.log(object);
+  // answersObj = object["answers"];
+  // techTestApp.answerArray = Object.values(answers);
+  // techTestApp.question = object["question"];
+    
+  // });
+  const question1 = jsonResponse[0].question;
+
+  const answers1 = jsonResponse[0].answers;
+  const answerArray1 = Object.values(answers1);
+  
+  //const correctAnswer1 = jsonResponse[0].correct_answer[0];
+
+  const correctAnswers1 = jsonResponse[0].correct_answers;
+  const correctAnswersArray1 = Object.values(correctAnswers1);
+
+console.log(question1);
+console.log(answerArray1);
+// console.log(answers1);
+// console.log(correctAnswer1);
+console.log(correctAnswersArray1);
+
+const h3 = document.querySelector("h3");
+h3.innerText = question1;
+const ul = document.querySelector("ul");
+
+for(i = 0; i < answerArray1.length; i++) {
+  if(answerArray1[i] !== null) {
+    const li = document.createElement("li");
+    li.innerText = answerArray1[i];
+    ul.appendChild(li);
+    // li.addEventListener("click", function() {
+    //   console.log("You've clicked!");
+    // })
+  }
+}
+
+techTestApp.answerSelect();
+})
+
+techTestApp.answerSelect = function() {
+  const options = document.querySelectorAll("li");
+  
+  options.forEach(function(clickOption) {
+    clickOption.addEventListener("click", function() {
+      console.log("Something was clicked!");
+    })
+  })
+};
+
+
+techTestApp.init();
