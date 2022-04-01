@@ -234,3 +234,40 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+html, body {
+  font-size: 6.25%;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0 auto;
+  max-width: 300px;
+  background-color: #00008a;
+  color: white;
+}
+
+h1 {
+  font-size: 34rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 28rem;
+}
+
+h3 {
+  font-size: 22rem;
+  font-weight: 400;
+}
+
+.content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}

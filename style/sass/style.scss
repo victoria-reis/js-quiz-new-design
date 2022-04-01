@@ -1,1 +1,36 @@
 @import './partials/setup';
+
+//using a mobile-first design, targeting a student reviewing their knowledge on the go
+
+// setting font-size so 1rem === 1px
+// centering content with some padding
+html, body {
+  font-size: calc(62.5% / 10);
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0 auto;
+  max-width: 300px;
+  background-color: #00008a;
+  color: white;
+}
+
+h1 {
+  font-size: 34rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 28rem;
+}
+
+h3 {
+  font-size: 22rem;
+  font-weight: 400;
+
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
