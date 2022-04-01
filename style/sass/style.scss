@@ -28,9 +28,26 @@ h3 {
 
 }
 
-.content-container {
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 25rem;
+}
+
+li .selected {
+  color: yellow;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 30rem;
 }

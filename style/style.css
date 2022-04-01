@@ -258,7 +258,19 @@ h3 {
   font-weight: 400;
 }
 
-.content-container {
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 25rem;
+}
+
+li .selected {
+  color: yellow;
+}
+
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -270,4 +282,9 @@ h3 {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 30rem;
 }
