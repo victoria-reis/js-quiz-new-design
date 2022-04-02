@@ -20,3 +20,20 @@ h3,
 p {
     text-align: center;
 }
+
+
+form, 
+fieldset {
+    margin: 0;
+    width: 100%;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-between;
+}
+
+legend,
+input[type="submit"] {
+    margin: 0 auto;
+}

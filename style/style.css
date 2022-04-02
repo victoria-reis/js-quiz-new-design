@@ -264,3 +264,23 @@ h3,
 p {
   text-align: center;
 }
+
+form,
+fieldset {
+  margin: 0;
+  width: 100%;
+}
+
+fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+legend,
+input[type=submit] {
+  margin: 0 auto;
+}
