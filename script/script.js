@@ -4,6 +4,7 @@ techTestApp.apiKey = "GyC8jhRUYRRfOwH3Qnhimw6ybHwhSFmP4C2AZRSZ";
 techTestApp.startButton = document.querySelector("#start");
 techTestApp.nextButton = document.querySelector("#next");
 techTestApp.playAgain = document.querySelector("#playAgain");
+techTestApp.playAgainMsg = document.querySelector("#playAgainMsg");
 techTestApp.h3 = document.querySelector("h3");
 techTestApp.h4 = document.querySelector("h4");
 techTestApp.span = document.querySelector("span");
@@ -141,6 +142,7 @@ techTestApp.gameOver = function() {
     techTestApp.h3.innerText = "THANKS FOR PLAYING!";
     techTestApp.fieldset.style.border = "none";
     techTestApp.playAgain.style.display = "block";
+    techTestApp.playAgainMsg.style.display = "block";
   }
 }
 

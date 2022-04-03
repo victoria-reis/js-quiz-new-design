@@ -114,6 +114,12 @@ font-size: 50rem;
 display: none;
 }
 
+.playAgainMsg {
+  display: none;
+  margin-top: 5px;
+  font-size: 14rem;
+}
+
 fieldset {
 display: flex;
 justify-content: space-between;
@@ -140,8 +146,8 @@ color: yellow;
 footer {
 text-align: center;
 font-size: 16rem;
-position: absolute;
-bottom: 0;
+position: relative;
+top: 10vh;
 margin: 0 auto;
 width: 100vw;
 }
