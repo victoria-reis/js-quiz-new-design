@@ -284,3 +284,7 @@ legend,
 input[type=submit] {
   margin: 0 auto;
 }
+
+p {
+  display: none;
+}
