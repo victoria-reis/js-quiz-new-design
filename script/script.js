@@ -40,8 +40,10 @@ Stretch goals:
     - PHP
 */
 
+//namespace object
 const techTestApp = {};
 
+//global variables
 techTestApp.apiKey = "GyC8jhRUYRRfOwH3Qnhimw6ybHwhSFmP4C2AZRSZ";
 techTestApp.startButton = document.querySelector("#start");
 techTestApp.submitButton = document.querySelector("#submit");
@@ -49,14 +51,17 @@ techTestApp.h3 = document.querySelector("h3");
 techTestApp.form = document.querySelector("#test-form");
 techTestApp.fieldset = document.querySelector("fieldset");
 
+//init function
 techTestApp.init = function() {
   techTestApp.starter();
   techTestApp.nextQuestion();
 };
 
+//step 1: event listenter, hides start button and calls first question
 techTestApp.starter = function() {
   techTestApp.startButton.addEventListener("click", function() {
     console.log("clicked!")
+    techTestApp.startButton.classList.add("started");
     techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
     techTestApp.url.search = new URLSearchParams({
         apiKey: techTestApp.apiKey,
@@ -133,5 +138,5 @@ techTestApp.displayQandA = function(data) {
 }
 
 
-
+//init call
 techTestApp.init();
