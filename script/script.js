@@ -40,6 +40,7 @@ Stretch goals:
     - PHP
 */
 
+
 //namespace object
 const techTestApp = {};
 
@@ -139,4 +140,5 @@ techTestApp.displayQandA = function(data) {
 
 
 //init call
+
 techTestApp.init();

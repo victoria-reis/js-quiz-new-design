@@ -246,6 +246,42 @@ body {
 
 main {
   margin: 0 auto;
+html, body {
+  font-size: 6.25%;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0 auto;
+  max-width: 300px;
+  background-color: #00008a;
+  color: white;
+}
+
+h1 {
+  font-size: 34rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 28rem;
+}
+
+h3 {
+  font-size: 22rem;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 25rem;
+}
+
+li .selected {
+  color: yellow;
+}
+
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,4 +323,10 @@ input[type=submit] {
 
 .started {
   display: none;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 30rem;
 }
