@@ -41,7 +41,8 @@ Stretch goals:
 */
 
 const techTestApp = {};
-techTestApp.apiKey = "w2z3GyoMPfVmhho3HjLyM30zUUD5c9ZCeg9cR4qC";
+
+techTestApp.apiKey = "GyC8jhRUYRRfOwH3Qnhimw6ybHwhSFmP4C2AZRSZ";
 techTestApp.startButton = document.querySelector("#start");
 techTestApp.submitButton = document.querySelector("#submit");
 techTestApp.h3 = document.querySelector("h3");
