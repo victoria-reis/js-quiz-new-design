@@ -235,16 +235,15 @@ html {
   overflow: hidden;
 }
 
-html {
-  font-size: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
+html, body {
+  font-size: 6.25%;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: #00008a;
+  color: white;
 }
 
 main {
+  width: 90%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,14 +260,115 @@ main {
 h1,
 h2,
 h3,
+h4,
 p {
   text-align: center;
 }
 
+h1 {
+  font-size: 40rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 28rem;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 22rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 30rem;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.scorep {
+  display: none;
+  font-size: 30rem;
+  margin: 0;
+}
+
 form,
 fieldset {
-  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
   width: 100%;
+  font-size: 22rem;
+  font-weight: 700;
+}
+
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input {
+  opacity: 0;
+}
+
+label:hover {
+  color: rgb(180, 180, 180);
+}
+
+label {
+  font-size: 18rem;
+  margin: 10px 0;
+}
+
+input:checked + label {
+  color: yellow;
+}
+
+button {
+  font-size: 22rem;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0 auto;
+  background-color: #0040b6;
+  color: white;
+  border-radius: 10px;
+}
+
+.start {
+  margin-top: 20px;
+  padding: 0 40px;
+  font-size: 50rem;
+}
+
+.next {
+  margin-top: 30px;
+  font-size: 30rem;
+  padding: 0 30px;
+  display: none;
+}
+
+.playAgain {
+  margin-top: 20px;
+  padding: 0 40px;
+  font-size: 50rem;
+  display: none;
 }
 
 fieldset {
@@ -278,6 +378,8 @@ fieldset {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-align: center;
+  border: none;
 }
 
 legend,
@@ -285,6 +387,21 @@ input[type=submit] {
   margin: 0 auto;
 }
 
-p {
-  display: none;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: yellow;
+}
+
+footer {
+  text-align: center;
+  font-size: 16rem;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100vw;
 }

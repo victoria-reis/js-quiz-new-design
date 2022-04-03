@@ -45,7 +45,8 @@ const techTestApp = {};
 
 techTestApp.apiKey = "GyC8jhRUYRRfOwH3Qnhimw6ybHwhSFmP4C2AZRSZ";
 techTestApp.startButton = document.querySelector("#start");
-techTestApp.nextButton = document.querySelector("#submit");
+techTestApp.nextButton = document.querySelector("#next");
+techTestApp.playAgain = document.querySelector("#playAgain");
 techTestApp.h3 = document.querySelector("h3");
 techTestApp.h4 = document.querySelector("h4");
 techTestApp.span = document.querySelector("span");
@@ -86,6 +87,7 @@ techTestApp.starter = function() {
     techTestApp.form.style.display = "block";
     techTestApp.startButton.style.display = "none";
     techTestApp.p.style.display = "block";
+    techTestApp.nextButton.style.display = "block";
   })
 }
 
@@ -126,6 +128,8 @@ techTestApp.gameOver = function() {
     techTestApp.clearFieldset();
     techTestApp.nextButton.style.display = "none";
     techTestApp.h3.innerText = "THANKS FOR PLAYING!";
+    techTestApp.fieldset.style.border = "none";
+    techTestApp.playAgain.style.display = "block";
   }
 }
 
@@ -160,14 +164,18 @@ techTestApp.displayQandA = function(data) {
             if(techTestApp.correctIndvidualAnswer.includes(newInput.value)) {
               console.log("answer is correct");
               techTestApp.h4.innerText = "CORRECT!";
+              techTestApp.h4.style.color = "#48ff00";
               techTestApp.score = techTestApp.score + 1;
               techTestApp.span.innerText = techTestApp.score;
               techTestApp.fieldset.disabled = true;
             } else {
               console.log("answer is wrong");
               techTestApp.h4.innerText = "INCORRECT!";
+              techTestApp.h4.style.color = "#ff0000";
+
             }
         })
+        techTestApp.fieldset.style.border = "1px white solid";
         techTestApp.fieldset.appendChild(newInput);
         techTestApp.fieldset.appendChild(newLabel);
       }

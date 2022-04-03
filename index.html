@@ -4,15 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Take the Tech-Tacular Test!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Welcome to Tech-Tacular Test</title>
   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
   <main>
-    <h1>Welcome to Tech-Tacular Test</h1>
+    <h1>Tech-Tacular Test</h1>
 
-    <h2>Do you want to master your JavaScript skills?</h2>
+    <h2>Try our JavaScript Quiz!</h2>
 
     <button class="start" id="start">Start</button>
     
@@ -20,25 +23,29 @@
 
       <h4></h4>
 
-      <p>Score: <span class="score">0</span></p>
+      <p class="scorep">Score: <span class="score">0</span></p>
 
       <legend><h3>
         <!-- question from API -->
       </h3></legend>
 
+      <div class="form-container">
       <fieldset>
         
         <!-- answers from API -->
 
       </fieldset>
       
-      <button id="submit">Next Question</button>
-
+      <button class="next" id="next">Next Question</button>
+      </div>
+      <button class="playAgain" id="playAgain" type="submit">PLAY AGAIN</button>
     </form>
   </main>
 
   <footer>
     <p>Created at <a href="https://junocollege.com/">Juno College of Technology</a></p>
+    <p>Powered by <a href="https://quizapi.io/">QuizAPI.io</a></p>
+
   </footer>
 
   <script src="./script/script.js"></script>
