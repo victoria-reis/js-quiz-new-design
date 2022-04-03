@@ -77,6 +77,7 @@ techTestApp.nextQuestion = function() {
         techTestApp.displayQandA(jsonResponse);
         techTestApp.testCorrector(jsonResponse);
         techTestApp.counter = techTestApp.counter + 1;
+        techTestApp.h4.innerText = "";
         techTestApp.gameOver();
       })
     })

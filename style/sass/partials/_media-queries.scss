@@ -1,0 +1,8 @@
+@media(min-width: 700px) {
+    fieldset {
+        max-width: 80%;
+    }
+    html, body {
+        font-size: calc(80% / 10);
+    }
+}
