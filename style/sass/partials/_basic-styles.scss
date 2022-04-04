@@ -44,7 +44,6 @@ margin: 0;
 margin-bottom: 10px;
 }
 
-
 .scorep {
 display: none;
 font-size: 30rem;
@@ -74,6 +73,7 @@ opacity: 0;
 
 label:hover {
 color: rgb(180, 180, 180);
+cursor: pointer;
 }
 
 label {
@@ -92,6 +92,10 @@ margin: 0 auto;
 background-color: #0040b6;
 color: white;
 border-radius: 10px;
+}
+
+button:hover {
+cursor: pointer;
 }
 
 .start {
@@ -135,13 +139,11 @@ margin: 0 auto;
 a {
 text-decoration: none;
 color: white;
-}
-
-a:hover {
+&:hover {
 text-decoration: none;
 color: yellow;
 }
-
+}
 
 footer {
 text-align: center;

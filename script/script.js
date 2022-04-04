@@ -20,6 +20,11 @@ techTestApp.init = function() {
   techTestApp.nextQuestion();
 };
 
+
+techTestApp.fetchData = function() {
+  
+}
+
 techTestApp.starter = function() {
   techTestApp.startButton.addEventListener("click", function() {
     techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
@@ -41,7 +46,8 @@ techTestApp.starter = function() {
     .then(function(jsonResponse) {
       techTestApp.displayQandA(jsonResponse);
       techTestApp.testCorrector(jsonResponse);
-    })  .catch(function(error) {
+    })
+    .catch(function(error) {
       techTestApp.h3.innerText = error;
     })
     techTestApp.form.style.display = "block";
@@ -52,36 +58,37 @@ techTestApp.starter = function() {
 }
 
 techTestApp.nextQuestion = function() {
-    techTestApp.nextButton.addEventListener("click", function(event) {
-      event.preventDefault();
-      techTestApp.clearFieldset();
+  techTestApp.nextButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    techTestApp.clearFieldset();
   
-      techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
-      techTestApp.url.search = new URLSearchParams({
-          apiKey: techTestApp.apiKey,
-          limit: "1",
-          category: "Code",
-          tags: "javascript",
-          difficulty: "easy"
-      })
-      fetch(techTestApp.url)
-      .then(function(response) {
-        if (response.ok) {
-        return response.json();
+    techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
+    techTestApp.url.search = new URLSearchParams({
+        apiKey: techTestApp.apiKey,
+        limit: "1",
+        category: "Code",
+        tags: "javascript",
+        difficulty: "easy"
+    })
+    fetch(techTestApp.url)
+    .then(function(response) {
+      if (response.ok) {
+      return response.json();
       } else {
         throw new Error("Something's broken.")
       }
-    })  .catch(function(error) {
+    })
+    .then(function(jsonResponse) {
+      techTestApp.displayQandA(jsonResponse);
+      techTestApp.testCorrector(jsonResponse);
+      techTestApp.counter = techTestApp.counter + 1;
+      techTestApp.h4.innerText = "";
+      techTestApp.gameOver();
+    })
+    .catch(function(error) {
       techTestApp.h3.innerText = error;
     })
-      .then(function(jsonResponse) {
-        techTestApp.displayQandA(jsonResponse);
-        techTestApp.testCorrector(jsonResponse);
-        techTestApp.counter = techTestApp.counter + 1;
-        techTestApp.h4.innerText = "";
-        techTestApp.gameOver();
-      })
-    })
+  })
 }
 
 techTestApp.displayQandA = function(data) {
