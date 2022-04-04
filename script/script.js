@@ -20,11 +20,6 @@ techTestApp.init = function() {
   techTestApp.nextQuestion();
 };
 
-
-techTestApp.fetchData = function() {
-  
-}
-
 techTestApp.starter = function() {
   techTestApp.startButton.addEventListener("click", function() {
     techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
