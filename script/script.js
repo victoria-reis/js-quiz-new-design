@@ -20,16 +20,17 @@ techTestApp.init = function() {
   techTestApp.nextQuestion();
 };
 
-techTestApp.starter = function() {
-  techTestApp.startButton.addEventListener("click", function() {
-    techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
+techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
     techTestApp.url.search = new URLSearchParams({
         apiKey: techTestApp.apiKey,
         limit: "1",
         category: "Code",
         tags: "javascript",
         difficulty: "easy"
-    })
+    });
+
+techTestApp.starter = function() {
+  techTestApp.startButton.addEventListener("click", function() {
     fetch(techTestApp.url)
     .then(function(response) {
       if (response.ok) {
@@ -57,14 +58,6 @@ techTestApp.nextQuestion = function() {
     event.preventDefault();
     techTestApp.clearFieldset();
   
-    techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
-    techTestApp.url.search = new URLSearchParams({
-        apiKey: techTestApp.apiKey,
-        limit: "1",
-        category: "Code",
-        tags: "javascript",
-        difficulty: "easy"
-    })
     fetch(techTestApp.url)
     .then(function(response) {
       if (response.ok) {
@@ -125,6 +118,7 @@ techTestApp.displayQandA = function(data) {
       }
     }
 }
+
 techTestApp.testCorrector = function(data) {
   const i = 0;
 
