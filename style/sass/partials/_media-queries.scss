@@ -1,8 +1,75 @@
-@media(min-width: 700px) {
-    fieldset {
-        max-width: 80%;
+@media(max-width: 725px) {
+    h1 {
+        font-size: 1.8rem;
     }
-    html, body {
-        font-size: calc(80% / 10);
+
+    h2 {
+        font-size: 0.8rem;
+    }
+
+    fieldset {
+        flex-direction: column;
+    }
+
+    .next {
+        margin: 70px auto 50px;
+    }
+
+    .playAgainMsg {
+        font-size: 0.7rem;
+    }
+}
+
+@media(max-width: 605px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        margin: 5px auto;
+    }
+
+    legend {
+        margin: 20px auto;
+    }
+
+    .start {
+        margin-top: 50px;
+    }
+
+    button {
+        font-size: 0.7rem;
+        
+    }
+}
+
+@media(max-width: 425px) {
+    html {
+        font-size: 100%;
+    }
+    
+    main {
+        margin: 70px auto;
+        padding: 0;
+        max-width: 90%;
+    }
+
+    // form {
+    //     margin: 0 calc((100vh / 2) - 80% - 10px);
+    // }
+
+    label {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-family: 'Play', sans-serif;
+        font-size: 1rem;
+    }
+
+    footer {
+        p{
+            font-size: 0.7rem;
+        }
     }
 }
