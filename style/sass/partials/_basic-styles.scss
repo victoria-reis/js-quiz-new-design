@@ -1,13 +1,13 @@
 html {
-  font-size: 125%;
-  font-family: 'Press Start 2P', sans-serif;
+	font-size: 125%;
+	font-family: "Press Start 2P", sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-image: url(../assets/wallpaperbetter.jpg);
-  background-position: center;
+	margin: 0;
+	padding: 0;
+	background-image: url(../assets/wallpaperbetter.jpg);
+	background-position: center;
 }
 
 h1,
@@ -15,169 +15,186 @@ h2,
 h3,
 h4,
 p {
-  text-align: center;
-  display: block;
+	text-align: center;
+	display: block;
 }
 
 main {
-  background-color: white;
-  margin: 100px auto;
-  max-width: 80%;
-  min-height: 60vh;
-  border-radius: 25px;
-  box-shadow: 0px 0px 50px 25px black;
-  padding: 20px;
-  border: 5px solid #f7df1e;
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-between;
+	background-color: white;
+	margin: 100px auto;
+	max-width: 80%;
+	min-height: 60vh;
+	border-radius: 25px;
+	box-shadow: 0px 0px 50px 25px black;
+	padding: 20px;
+	border: 5px solid #f7df1e;
+	display: flex;
+	flex-direction: column;
+	// justify-content: space-between;
 }
 
 .scorep,
 .next,
-.playAgainMsg, 
+.playAgainMsg,
 .playAgain {
-  display: none;
+	display: none;
 }
 
 h1 {
-  font-size: 2.2rem;
-  text-align: center;
-  margin: 30px auto;
+	font-size: 2.2rem;
+	text-align: center;
+	margin: 30px auto;
 }
 
 legend {
-  margin: 40px auto;
+	margin: 40px auto;
 }
 
 h2,
 h3 {
-  font-size: 1rem;
-  margin: 10px auto;
+	font-size: 1rem;
+	margin: 10px auto;
 }
 
 h3 {
-  font-family: 'Play', sans-serif;
-  font-size: 1.2rem;
+	font-family: "Play", sans-serif;
+	font-size: 1.2rem;
 }
 
 h4 {
-  font-size: 1.2rem;
-  transition: 0.2s;
+	font-size: 1.2rem;
 }
 
 button {
-  font-family: inherit;
-  margin: 0 auto;
-  display: block;
-  cursor: pointer;
+	font-family: inherit;
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
 }
 
 .start,
 .next,
 .playAgain {
-  text-align: center;
-  padding: 12px 30px 10px;
-  border: 3px solid black;
-  border-radius: 18px;
-  background-color: #f7df1e;
-  margin-top: 150px;
+	text-align: center;
+	padding: 12px 30px 10px;
+	border: 3px solid black;
+	border-radius: 18px;
+	background-color: #f7df1e;
+	margin-top: 150px;
 
- &:hover,
- &:focus {
-  box-shadow: 0px 0px 20px 1px black;
-  scale: 1.1;
-  transition: 0.3s;
- }
+	&:hover,
+	&:focus {
+		box-shadow: 0px 0px 20px 1px black;
+		scale: 1.1;
+		transition: 0.3s;
+	}
 }
 
 .playAgain {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 .next,
 .playAgainMsg {
-  margin-bottom: 100px;
+	margin-bottom: 100px;
 }
 
 .scorep {
-  font-size: 0.6rem;
-  text-align: center;
-  padding: 10px 20px;
-  border: 3px solid black;
-  border-radius: 18px;
-  background-color: #f7df1e;
-  margin: 20px auto;
-  width: 150px;
+	font-size: 0.6rem;
+	text-align: center;
+	padding: 10px 20px;
+	border: 3px solid black;
+	border-radius: 18px;
+	background-color: #f7df1e;
+	margin: 20px auto;
+	width: 150px;
 }
 
 form {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
 }
 
 fieldset {
-  border: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-betweew;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: fit-content;
-  max-width: 100%;
+	border: none;
+	padding: 0;
+	display: flex;
+	justify-content: space-betweew;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	width: fit-content;
+	max-width: 100%;
 }
 
 label {
-  font-family: 'Play', sans-serif;
-  font-size: 1.2rem;
-  text-align: center;
-  padding: 10px 20px;
-  border: 3px solid black;
-  border-radius: 18px;
-  background-color: #f7df1e;
-  margin: 20px auto;
-  max-width: 100%;
+	font-family: "Play", sans-serif;
+	font-size: 1.2rem;
+	text-align: center;
+	padding: 10px 20px;
+	border: 3px solid black;
+	border-radius: 18px;
+	background-color: #f7df1e;
+	margin: 20px auto;
+	max-width: 100%;
 
-  &:hover,
-  &:focus {
-    box-shadow: 0px 0px 20px 1px black;
-    scale: 1.1;
-    transition: 0.2s;
-    font-weight: bold;
-    cursor: pointer;
-  }
+	&:hover,
+	&:focus {
+		box-shadow: 0px 0px 20px 1px black;
+		scale: 1.1;
+		transition: 0.2s;
+		font-weight: bold;
+		cursor: pointer;
+	}
 
-  &:active {
-    color: #f7df1e;
-    border-color: #f7df1e;
-    background-color: black;
-  }
+	&:active {
+		color: #f7df1e;
+		border-color: #f7df1e;
+		background-color: black;
+	}
 }
 
 input[type="radio"] {
-  position: relative;
-  left: 200px;
-  opacity: 0;
+	position: relative;
+	left: 200px;
+	opacity: 0;
 }
 
 footer {
-  background-color: black;
-  padding: 2px 0;
-  // position: absolute;
-  width: 100%;
-  // bottom: 0;
-  margin-top: 50px;
-  p {
-    font-family: 'Play', sans-serif;
-    color: white;
-    font-size: 0.7rem;
-    margin: 0 auto;
-  }
-  a {
-    color: #f7df1e;
-  }
+	background-color: black;
+	padding: 2px 0;
+	// position: absolute;
+	width: 100%;
+	// bottom: 0;
+	margin-top: 50px;
+	p {
+		font-family: "Play", sans-serif;
+		color: white;
+		font-size: 0.7rem;
+		margin: 0 auto;
+	}
+	a {
+		color: #f7df1e;
+	}
+}
+
+.correct {
+	animation: correct 0.8s ease 0s 1 normal forwards;
+}
+
+@keyframes correct {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(3);
+	}
+
+	100% {
+		transform: scale(1);
+	}
 }

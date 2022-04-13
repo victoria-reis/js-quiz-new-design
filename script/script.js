@@ -1,6 +1,6 @@
 const techTestApp = {};
 
-techTestApp.apiKey = "GyC8jhRUYRRfOwH3Qnhimw6ybHwhSFmP4C2AZRSZ";
+techTestApp.apiKey = "w2z3GyoMPfVmhho3HjLyM30zUUD5c9ZCeg9cR4qC";
 techTestApp.startButton = document.querySelector("#start");
 techTestApp.nextButton = document.querySelector("#next");
 techTestApp.playAgain = document.querySelector("#playAgain");
@@ -15,135 +15,145 @@ techTestApp.correctIndvidualAnswer;
 techTestApp.counter = 0;
 techTestApp.score = 0;
 
-techTestApp.init = function() {
-  techTestApp.starter();
-  techTestApp.nextQuestion();
+techTestApp.init = function () {
+	techTestApp.starter();
+	techTestApp.nextQuestion();
 };
 
 techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
-    techTestApp.url.search = new URLSearchParams({
-        apiKey: techTestApp.apiKey,
-        limit: "1",
-        category: "Code",
-        tags: "javascript",
-        difficulty: "easy"
-    });
+techTestApp.url.search = new URLSearchParams({
+	apiKey: techTestApp.apiKey,
+	limit: "1",
+	category: "Code",
+	tags: "javascript",
+	difficulty: "easy",
+});
 
-techTestApp.starter = function() {
-  techTestApp.startButton.addEventListener("click", function() {
-    fetch(techTestApp.url)
-    .then(function(response) {
-      if (response.ok) {
-      return response.json();
-      } else {
-        throw new Error("Something's broken.")
-      }
-    })
-    .then(function(jsonResponse) {
-      techTestApp.displayQandA(jsonResponse);
-      techTestApp.testCorrector(jsonResponse);
-    })
-    .catch(function(error) {
-      techTestApp.h3.innerText = error;
-    })
-    techTestApp.form.style.display = "block";
-    techTestApp.startButton.style.display = "none";
-    techTestApp.p.style.display = "block";
-    techTestApp.nextButton.style.display = "block";
-  })
-}
+techTestApp.starter = function () {
+	techTestApp.startButton.addEventListener("click", function () {
+		fetch(techTestApp.url)
+			.then(function (response) {
+				if (response.ok) {
+					return response.json();
+				} else {
+					throw new Error("Something's broken.");
+				}
+			})
+			.then(function (jsonResponse) {
+				techTestApp.displayQandA(jsonResponse);
+				techTestApp.testCorrector(jsonResponse);
+			})
+			.catch(function (error) {
+				techTestApp.h3.innerText = error;
+			});
+		techTestApp.form.style.display = "block";
+		techTestApp.startButton.style.display = "none";
+		techTestApp.p.style.display = "block";
+		techTestApp.nextButton.style.display = "block";
+	});
+};
 
-techTestApp.nextQuestion = function() {
-  techTestApp.nextButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    techTestApp.clearFieldset();
-  
-    fetch(techTestApp.url)
-    .then(function(response) {
-      if (response.ok) {
-      return response.json();
-      } else {
-        throw new Error("Something's broken.")
-      }
-    })
-    .then(function(jsonResponse) {
-      techTestApp.displayQandA(jsonResponse);
-      techTestApp.testCorrector(jsonResponse);
-      techTestApp.counter = techTestApp.counter + 1;
-      techTestApp.h4.innerText = "";
-      techTestApp.gameOver();
-    })
-    .catch(function(error) {
-      techTestApp.h3.innerText = error;
-    })
-  })
-}
+techTestApp.nextQuestion = function () {
+	techTestApp.nextButton.addEventListener("click", function (event) {
+		event.preventDefault();
+		techTestApp.clearFieldset();
 
-techTestApp.displayQandA = function(data) {
-  techTestApp.fieldset.disabled = false;
-  const i = 0;
-  let question = data[i].question;
-  let answers = data[i].answers;
+		fetch(techTestApp.url)
+			.then(function (response) {
+				if (response.ok) {
+					return response.json();
+				} else {
+					throw new Error("Something's broken.");
+				}
+			})
+			.then(function (jsonResponse) {
+				techTestApp.displayQandA(jsonResponse);
+				techTestApp.testCorrector(jsonResponse);
+				techTestApp.counter = techTestApp.counter + 1;
+				techTestApp.h4.innerText = "";
+				techTestApp.gameOver();
+			})
+			.catch(function (error) {
+				techTestApp.h3.innerText = error;
+			});
+	});
+};
 
-  techTestApp.h3.innerText = question;
+techTestApp.displayQandA = function (data) {
+	techTestApp.fieldset.disabled = false;
+	const i = 0;
+	let question = data[i].question;
+	let answers = data[i].answers;
 
-  for(let individualAnswer in answers) {
-      if(answers[individualAnswer] !== null) {
-        const newLabel = document.createElement("label");
-        const newInput = document.createElement("input");
-        
-        newLabel.htmlFor = individualAnswer;
-        newLabel.innerText = answers[individualAnswer];
-        newInput.type = "radio";
-        newInput.id = individualAnswer;
-        newInput.value = individualAnswer;
-        newInput.name = "option";
+	techTestApp.h3.innerText = question;
 
-        newInput.addEventListener("click", function(event) {
-            if(techTestApp.correctIndvidualAnswer.includes(newInput.value)) {
-              techTestApp.h4.innerText = "CORRECT!";
-              techTestApp.h4.style.color = "#48ff00";
-              techTestApp.score = techTestApp.score + 1;
-              techTestApp.span.innerText = techTestApp.score;
-              techTestApp.fieldset.disabled = true;
-            } else {
-              techTestApp.h4.innerText = "INCORRECT!";
-              techTestApp.h4.style.color = "#ff0000";
+	for (let individualAnswer in answers) {
+		if (answers[individualAnswer] !== null) {
+			const newLabel = document.createElement("label");
+			const newInput = document.createElement("input");
 
-            }
-        })
-        techTestApp.fieldset.style.border = "1px white solid";
-        techTestApp.fieldset.appendChild(newInput);
-        techTestApp.fieldset.appendChild(newLabel);
-      }
-    }
-}
+			newLabel.htmlFor = individualAnswer;
+			newLabel.innerText = answers[individualAnswer];
+			newInput.type = "radio";
+			newInput.id = individualAnswer;
+			newInput.value = individualAnswer;
+			newInput.name = "option";
 
-techTestApp.testCorrector = function(data) {
-  const i = 0;
+			newInput.addEventListener("click", function (event) {
+				techTestApp.h4.classList.toggle("correct");
+				techTestApp.animationTimer();
+				if (techTestApp.correctIndvidualAnswer.includes(newInput.value)) {
+					techTestApp.h4.innerText = "CORRECT!";
+					techTestApp.h4.style.color = "#48ff00";
+					techTestApp.score = techTestApp.score + 1;
+					techTestApp.span.innerText = techTestApp.score;
+					techTestApp.fieldset.disabled = true;
+				} else {
+					techTestApp.h4.innerText = "INCORRECT!";
+					techTestApp.h4.style.color = "#ff0000";
+				}
+			});
+			techTestApp.fieldset.style.border = "1px white solid";
+			techTestApp.fieldset.appendChild(newInput);
+			techTestApp.fieldset.appendChild(newLabel);
+			// techTestApp.h4.classList.remove("correct");
+		}
+	}
+};
 
-  let correctAnswersObj = data[i].correct_answers; 
+techTestApp.testCorrector = function (data) {
+	const i = 0;
 
-  for(let individualAnswer in correctAnswersObj) {
-    if(correctAnswersObj[individualAnswer] === "true") {
-      techTestApp.correctIndvidualAnswer = individualAnswer;
-    }
-  }
-}
+	let correctAnswersObj = data[i].correct_answers;
 
-techTestApp.gameOver = function() {
-  if (techTestApp.counter === 5) {
-    techTestApp.clearFieldset();
-    techTestApp.nextButton.style.display = "none";
-    techTestApp.h3.innerText = "THANKS FOR PLAYING!";
-    techTestApp.fieldset.style.border = "none";
-    techTestApp.playAgain.style.display = "block";
-    techTestApp.playAgainMsg.style.display = "block";
-  }
-}
+	for (let individualAnswer in correctAnswersObj) {
+		if (correctAnswersObj[individualAnswer] === "true") {
+			techTestApp.correctIndvidualAnswer = individualAnswer;
+		}
+	}
+};
 
-techTestApp.clearFieldset = function() {
-  techTestApp.fieldset.innerHTML = "";
-}
+techTestApp.gameOver = function () {
+	if (techTestApp.counter === 5) {
+		techTestApp.clearFieldset();
+		techTestApp.nextButton.style.display = "none";
+		techTestApp.h3.innerText = "THANKS FOR PLAYING!";
+		techTestApp.fieldset.style.border = "none";
+		techTestApp.playAgain.style.display = "block";
+		techTestApp.playAgainMsg.style.display = "block";
+	}
+};
+
+techTestApp.clearFieldset = function () {
+	techTestApp.fieldset.innerHTML = "";
+};
+
+techTestApp.animationTimer = () => {
+	console.log("it starts");
+	setTimeout(() => {
+		techTestApp.h4.classList.remove("correct");
+		console.log("it ends");
+	}, 0700);
+};
 
 techTestApp.init();

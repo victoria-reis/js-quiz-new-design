@@ -305,8 +305,6 @@ h3 {
 
 h4 {
   font-size: 1.2rem;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
 }
 
 button {
@@ -442,6 +440,40 @@ footer a {
   color: #f7df1e;
 }
 
+.correct {
+  -webkit-animation: correct 0.8s ease 0s 1 normal forwards;
+          animation: correct 0.8s ease 0s 1 normal forwards;
+}
+
+@-webkit-keyframes correct {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes correct {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 @media (max-width: 725px) {
   h1 {
     font-size: 1.8rem;
