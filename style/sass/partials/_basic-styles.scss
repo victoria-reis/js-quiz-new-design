@@ -21,9 +21,9 @@ p {
 
 main {
 	background-color: white;
-	margin: 100px auto;
-	max-width: 80%;
-	min-height: 60vh;
+	margin: 50px auto;
+	max-width: 90%;
+	min-height: 80vh;
 	border-radius: 25px;
 	box-shadow: 0px 0px 50px 25px black;
 	padding: 20px;
@@ -43,11 +43,11 @@ main {
 h1 {
 	font-size: 2.2rem;
 	text-align: center;
-	margin: 30px auto;
+	margin: 20px auto;
 }
 
 legend {
-	margin: 40px auto;
+	margin: 10px auto 35px;
 }
 
 h2,
@@ -94,7 +94,10 @@ button {
 	margin: 0 auto;
 }
 
-.next,
+.next {
+	margin: 70px auto;
+}
+
 .playAgainMsg {
 	margin-bottom: 100px;
 }
@@ -122,7 +125,7 @@ fieldset {
 	border: none;
 	padding: 0;
 	display: flex;
-	justify-content: space-betweew;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 0 auto;
@@ -138,7 +141,7 @@ label {
 	border: 3px solid black;
 	border-radius: 18px;
 	background-color: #f7df1e;
-	margin: 20px auto;
+	margin: 20px;
 	max-width: 100%;
 
 	&:hover,
@@ -182,7 +185,7 @@ footer {
 }
 
 .correct {
-	animation: correct 0.8s ease 0s 1 normal forwards;
+	animation: correct 1s ease 0s 1 normal forwards;
 }
 
 @keyframes correct {

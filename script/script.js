@@ -101,9 +101,11 @@ techTestApp.displayQandA = function (data) {
 
 			newInput.addEventListener("click", function (event) {
 				techTestApp.h4.classList.toggle("correct");
+				console.log(event.target);
 				techTestApp.animationTimer();
 				if (techTestApp.correctIndvidualAnswer.includes(newInput.value)) {
 					techTestApp.h4.innerText = "CORRECT!";
+					event.target.nextElementSibling.style.borderColor = "#48ff00";
 					techTestApp.h4.style.color = "#48ff00";
 					techTestApp.score = techTestApp.score + 1;
 					techTestApp.span.innerText = techTestApp.score;
@@ -111,6 +113,7 @@ techTestApp.displayQandA = function (data) {
 				} else {
 					techTestApp.h4.innerText = "INCORRECT!";
 					techTestApp.h4.style.color = "#ff0000";
+					event.target.nextElementSibling.style.borderColor = "#ff0000";
 				}
 			});
 			techTestApp.fieldset.style.border = "1px white solid";
@@ -153,7 +156,7 @@ techTestApp.animationTimer = () => {
 	setTimeout(() => {
 		techTestApp.h4.classList.remove("correct");
 		console.log("it ends");
-	}, 0700);
+	}, 1000);
 };
 
 techTestApp.init();
