@@ -30,7 +30,6 @@ main {
 	border: 5px solid #f7df1e;
 	display: flex;
 	flex-direction: column;
-	// justify-content: space-between;
 }
 
 .scorep,
@@ -63,6 +62,9 @@ h3 {
 
 h4 {
 	font-size: 1.2rem;
+	max-width: 80%;
+	margin: 0 auto;
+	overflow-x: hidden;
 }
 
 button {
@@ -99,7 +101,7 @@ button {
 }
 
 .playAgainMsg {
-	margin-bottom: 100px;
+	margin: 10px auto 100px;
 }
 
 .scorep {
@@ -129,7 +131,7 @@ fieldset {
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 0 auto;
-	width: fit-content;
+	width: auto;
 	max-width: 100%;
 }
 
@@ -141,8 +143,9 @@ label {
 	border: 3px solid black;
 	border-radius: 18px;
 	background-color: #f7df1e;
-	margin: 20px;
+	margin: 20px auto;
 	max-width: 100%;
+	word-break: break-word;
 
 	&:hover,
 	&:focus {
@@ -161,17 +164,13 @@ label {
 }
 
 input[type="radio"] {
-	position: relative;
-	left: 200px;
 	opacity: 0;
 }
 
 footer {
 	background-color: black;
 	padding: 2px 0;
-	// position: absolute;
-	width: 100%;
-	// bottom: 0;
+	max-width: 100%;
 	margin-top: 50px;
 	p {
 		font-family: "Play", sans-serif;
@@ -184,11 +183,11 @@ footer {
 	}
 }
 
-.correct {
-	animation: correct 1s ease 0s 1 normal forwards;
+.h4-animation {
+	animation: pulse 1s ease 0s 1 normal forwards;
 }
 
-@keyframes correct {
+@keyframes pulse {
 	0% {
 		transform: scale(1);
 	}

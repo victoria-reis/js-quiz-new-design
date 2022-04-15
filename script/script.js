@@ -24,9 +24,9 @@ techTestApp.url = new URL("https://quizapi.io/api/v1/questions");
 techTestApp.url.search = new URLSearchParams({
 	apiKey: techTestApp.apiKey,
 	limit: "1",
-	category: "Code",
+	// category: "Code",
 	tags: "javascript",
-	difficulty: "easy",
+	// difficulty: "easy",
 });
 
 techTestApp.starter = function () {
@@ -100,8 +100,7 @@ techTestApp.displayQandA = function (data) {
 			newInput.name = "option";
 
 			newInput.addEventListener("click", function (event) {
-				techTestApp.h4.classList.toggle("correct");
-				console.log(event.target);
+				techTestApp.h4.classList.toggle("h4-animation");
 				techTestApp.animationTimer();
 				if (techTestApp.correctIndvidualAnswer.includes(newInput.value)) {
 					techTestApp.h4.innerText = "CORRECT!";
@@ -119,7 +118,6 @@ techTestApp.displayQandA = function (data) {
 			techTestApp.fieldset.style.border = "1px white solid";
 			techTestApp.fieldset.appendChild(newInput);
 			techTestApp.fieldset.appendChild(newLabel);
-			// techTestApp.h4.classList.remove("correct");
 		}
 	}
 };
@@ -152,10 +150,8 @@ techTestApp.clearFieldset = function () {
 };
 
 techTestApp.animationTimer = () => {
-	console.log("it starts");
 	setTimeout(() => {
-		techTestApp.h4.classList.remove("correct");
-		console.log("it ends");
+		techTestApp.h4.classList.remove("h4-animation");
 	}, 1000);
 };
 
